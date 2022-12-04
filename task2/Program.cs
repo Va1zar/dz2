@@ -1,14 +1,25 @@
 ﻿//Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет
 
-Console.Write("Введите число = ");
-int A = int.Parse(Console.ReadLine()!);
+Console.Write("Введите любое число = ");
+int n = Math.Abs(int.Parse(Console.ReadLine()!));
+int A = n;
+int count = 0;
 
-if ( A > 99 )
+while ( A > 0)
 {
-    int result = A / 100 % 10;
-    Console.WriteLine("Третья цифра числа = " + result );
+    A /= 10;
+    count++;
+}
+if ( count -3 >= 0 )
+{
+    while ( count -3 > 0 )
+    {
+        n = n / 10;
+    count--;
+    }
+    Console.WriteLine($"Третья цифра числа = {n % 10} ");
 }
 else
 {
-    Console.WriteLine("Третьей цифры нет " );
+    Console.WriteLine("Третьей цифры нет ");
 }
